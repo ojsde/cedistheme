@@ -18,11 +18,162 @@
 		}
 	}*/
 
-	@media (min-width: 768px) {
+	/*@media (min-width: 768px) {
 		.obj_article_details .entry_details .item {
 			border-bottom: 1px solid @contrastColour;
 			margin-right: 0;
 		}
+	}*/
+
+}
+
+& when (@structureStyle ='fullBorders') {
+
+	.page {
+		border-left: @bg-border;
+		border-right: @bg-border;
+		padding: 0;
+
+		.cmp_breadcrumbs {
+			border-bottom: @bg-border;
+			//border-top: 0;
+			padding: @double;
+			padding-top: @triple;
+			padding-bottom: 0;
+			margin-top: 0;
+		}
 	}
 
+	.page_index_journal {
+
+		border-left: @bg-border;
+		border-right: @bg-border;
+
+		.homepage_image,
+		.journal-description,
+		.cmp_announcements,
+		.current_issue,
+		.additional_content {
+			//border-top: @bg-border;
+			border-bottom: @bg-border;
+			padding: @double;
+		}
+
+		.additional_content {
+			border: none;
+		}
+	}
+
+	.page_issue {
+
+
+		//.cmp_breadcrumbs,
+		.cover,
+		.description,
+		.pub_id,
+		.published,
+		.section {
+			//border-top: @bg-border;
+			border-bottom: @bg-border;
+			padding: @double;
+		}
+
+		.description {
+			border-left: @bg-border;
+		}
+
+		/*.cmp_breadcrumbs {
+
+			padding-bottom: 0
+		}*/
+
+		//.cmp_breadcrumbs,
+		.pub_id {
+			margin-top: 0;
+			padding-top: @triple;
+		}
+
+		.pub_id {
+			padding-bottom: 0;
+			border-bottom: none;
+		}
+
+		.obj_issue_toc .sections {
+			margin-top: 0;
+
+			.section:first-child {
+				margin-top: 0;
+			}
+
+			.section:last-child {
+				border-bottom: none;
+			}
+		}
+	}
+
+	.page_article {
+
+		.obj_article_details {
+
+			.page_title,
+			.main_entry,
+			.entry_details {
+				border-bottom: @bg-border;
+				//border-top: none;
+				padding: @double;
+				margin-top: 0;
+				margin-bottom: 0;
+			}
+
+			.main_entry {
+				border-right: @bg-border;
+				border-bottom: none;
+			}
+
+			.row .entry_details {
+				padding: 0;
+				padding-left: 0;
+				border-bottom: none;
+
+				.item {
+					border-bottom: @bg-border;
+					padding: @double;
+					margin: 0;
+				}
+
+				.item:last-child {
+					border-bottom: none;
+				}
+			}
+		}
+	}
+
+	.page_issue_archive {
+		border-left: @bg-border;
+		border-right: @bg-border;
+
+		.cmp_breadcrumbs {
+			border-bottom: @bg-border;
+			padding: @double;
+			padding-top: @triple;
+			margin-top: 0;
+			margin-bottom: 0;
+		}
+
+		.issues_archive {
+			li {
+				border-bottom: @bg-border;
+				padding: @double;
+				padding-top: @triple;
+				margin: 0;
+
+			}
+		}
+
+		.cmp_pagination {
+			padding: @double;
+			padding-bottom: @triple;
+			margin: 0;
+		}
+	}
 }

@@ -158,6 +158,7 @@ class CedisTheme extends ThemePlugin {
       'label' => 'plugins.themes.cedistheme.option.cedisTheme.borderStylesLabel',
       'description' => 'plugins.themes.cedistheme.option.cedisTheme.borderStylesDescription',
       'options' => array(
+        'full' => 'plugins.themes.cedistheme.option.cedisTheme.borderStylesFull', 
         'clean' => 'plugins.themes.cedistheme.option.cedisTheme.borderStylesOff',
         'horizontalBorders' => 'plugins.themes.cedistheme.option.cedisTheme.borderStylesHorizontal',
         'blocks' => 'plugins.themes.cedistheme.option.cedisTheme.borderStylesDefault'
@@ -194,9 +195,9 @@ class CedisTheme extends ThemePlugin {
 		$this->addScript('jQueryUI', $jqueryUI, array('baseUrl' => ''));
 		$this->addScript('jQueryTagIt', $request->getBaseUrl() . '/lib/pkp/js/lib/jquery/plugins/jquery.tag-it.js', array('baseUrl' => ''));
 		// Load Bootsrap's dropdown
-		$this->addScript('popper', 'js/lib/popper/popper.js');
-		$this->addScript('bsUtil', 'js/lib/bootstrap/util.js');
-		$this->addScript('bsDropdown', 'js/lib/bootstrap/dropdown.js');
+		//$this->addScript('popper', 'js/lib/popper/popper.js');
+		//$this->addScript('bsUtil', 'js/lib/bootstrap/util.js');
+		//$this->addScript('bsDropdown', 'js/lib/bootstrap/dropdown.js');
 		// Load custom JavaScript for this theme
     $this->addScript('default', 'js/main.js');
     
@@ -387,6 +388,8 @@ class CedisTheme extends ThemePlugin {
     $structureStyleOpt = $this->getOption('structureStyle');
     if (empty($structureStyleOpt) || $structureStyleOpt === 'clean' ) {
       $additionalLessVariables[] = '@structureStyle: \'clean\';';
+    } elseif ($structureStyleOpt === 'full') {
+      $additionalLessVariables[] = '@structureStyle: \'fullBorders\';';
     } elseif ($structureStyleOpt === 'horizontalBorders') {
       $additionalLessVariables[] = '@structureStyle: \'horizontalBorders\';';
     } elseif ($structureStyleOpt === 'blocks') {

@@ -3,6 +3,11 @@ body {
 	border: none;
 }
 
+.pkp_structure_main {
+	padding-top: @double;
+	padding-bottom: @double;
+}
+
 .pkp_structure_page,
 .pkp_structure_head,
 .pkp_structure_content,
@@ -372,10 +377,20 @@ body {
 }
 
 .page_contact {
+	height: 80vh;
+
 	.contact_section {
 		grid-column-start: 1;
 		grid-column-end: 8;
 		grid-row: 2;
+
+		display: block;
+
+		.address,
+		.contact {
+			width: 100%;
+			display: block;
+		}
 	}
 }
 
@@ -419,6 +434,17 @@ body {
 	padding: @double  !important;
 	margin: @double  !important;
 }
+
+
+/*.page_custom {
+	display: block;
+}*/
+
+.page_custom * {
+	grid-column-start: 1;
+	grid-column-end: 8;
+}
+
 
 
 @media screen and (min-width: @screen-lg-desktop) {
