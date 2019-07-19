@@ -419,3 +419,13 @@ body {
 	padding: @double  !important;
 	margin: @double  !important;
 }
+
+
+@media screen and (min-width: @screen-lg-desktop) {
+	body {
+		display: grid;
+		//grid-template-columns: 1fr 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px 1fr;
+		grid-template-columns: 1fr repeat(@gridColumns - 2, @screen-lg-desktop / @gridColumns) 1fr;
+		grid-auto-rows: minmax(min-content, max-content);
+	}
+}
