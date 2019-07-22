@@ -1,9 +1,9 @@
 document.addEventListener('DOMContentLoaded', function (event) {
 	console.log('Event started');
 	if (!document.body.contains(document.getElementById('main-content'))) {
-		const check = document.getElementsByClassName('page_contact');
+		var check = document.getElementsByClassName('page');
 
-		if (check.length == 0) {
+		if (check.length <= 1) {
 			const contentBuffer = document.getElementById('pkp_content_main').children;
 			console.log(contentBuffer);
 
@@ -16,6 +16,10 @@ document.addEventListener('DOMContentLoaded', function (event) {
 			var j = contentBuffer.length;
 			for (i = 0; i < j; i++) {
 				console.log(contentBuffer[0]);
+				if (contentBuffer[0].classList.contains('page')) {
+					contentBuffer[0].classList.remove('page');
+					contentBuffer[0].classList.add('page_content_wrapper');
+				}
 				wrapperElement.appendChild(contentBuffer[0]);
 			}
 

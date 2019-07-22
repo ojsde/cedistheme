@@ -32,15 +32,19 @@
 	.page {
 		border-left: @bg-border;
 		border-right: @bg-border;
-		padding: 0;
+
 
 		.cmp_breadcrumbs {
-			border-bottom: @bg-border;
+			//border-bottom: @bg-border;
 			//border-top: 0;
 			padding: @double;
 			padding-top: @triple;
 			padding-bottom: 0;
 			margin-top: 0;
+		}
+
+		.cmp_edit_link {
+			padding: @base @double @double @double;
 		}
 	}
 
@@ -153,7 +157,7 @@
 		border-right: @bg-border;
 
 		.cmp_breadcrumbs {
-			border-bottom: @bg-border;
+			//border-bottom: @bg-border;
 			padding: @double;
 			padding-top: @triple;
 			margin-top: 0;
@@ -175,5 +179,71 @@
 			padding-bottom: @triple;
 			margin: 0;
 		}
+	}
+
+	.page_about {
+		.about_journal_wrapper {
+			padding: 0 @double;
+		}
+	}
+
+	.page_submissions {
+		div {
+			padding: 0 @double;
+		}
+
+		.cmp_notification {
+			width: 90% !important;
+			margin: @double @quadruple  !important;
+			//padding: 0 @quadruple  !important;
+		}
+
+		.submission_checklist {
+			ul {
+				margin: @double @quadruple @base @quadruple;
+			}
+		}
+
+		.privacy_statement_wrapper {
+			padding-left: 0;
+		}
+	}
+
+	.page_editorial_team {
+		.editorial_team_wrapper {
+			padding: 0 @double;
+		}
+	}
+
+	.page_privacy {
+		.privacy_statement_wrapper {
+			padding: 0 @double;
+		}
+	}
+
+	.page_contact {
+		.contact_section {
+			padding: 0 @double;
+		}
+	}
+
+	.page_announcements {
+		.cmp_announcements {
+			margin: 0;
+			//padding: 0 @double;
+		}
+	}
+
+	.page_announcement {
+		border-left: @bg-border;
+		border-right: @bg-border;
+
+		.obj_announcement_full {
+			padding: @double;
+		}
+	}
+
+	.page_custom {
+		padding: @double  !important;
 	}
 }

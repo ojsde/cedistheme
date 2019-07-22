@@ -22,12 +22,20 @@ body {
 	grid-row: 1;
 
 	.gridSetup(@gridColumns);
-	grid-template-rows: 150px 1fr 40px;
+	//grid-template-rows: 150px 1fr 40px;
+	//grid-template-rows: 1fr 1fr 40px;
+	grid-auto-rows: minmax(min-content, max-content);
 
 	.pkp_site_name_wrapper {
-		.gridWidthHalf(2);
+		//.gridWidthHalf(2);
+		grid-column-start: 2;
+		grid-column-end: 10;
 		grid-row: 1;
-		height: 100%;
+		//height: 100%;
+
+		min-height: 150px;
+		max-height: 250px;
+		//overflow: hidden;
 		display: inline-block;
 		//align-items: center;
 		justify-items: left;
@@ -35,10 +43,28 @@ body {
 		//align-content: center;
 		align-items: center;
 
-		h1 {
+		.pkp_site_name {
 			//align-items: center;
 			//justify-items: left;
-			margin: 0;
+			display: flex;
+			min-height: 150px;
+			max-height: 250px;
+			justify-content: center;
+			flex-direction: column;
+			//max-height: 250px;
+
+			.is_img,
+			.is_text {
+				//height: 100%;
+				margin-top: auto !important;
+				margin-bottom: auto !important;
+
+				img {
+					float: left;
+					margin-left: 0;
+					padding-left: 0;
+				}
+			}
 		}
 	}
 
@@ -108,9 +134,9 @@ body {
 	grid-auto-rows: minmax(min-content, max-content) !important;
 
 	.pkp_site_name {
-		grid-column-start: 2 !important;
-		grid-column-end: 9 !important;
-		grid-row: 1 !important;
+		grid-column-start: 2;
+		grid-column-end: 9;
+		grid-row: 1;
 	}
 }
 
@@ -298,6 +324,12 @@ body {
 	display: grid;
 	grid-template-columns: repeat(7, 100% / 7);
 	grid-auto-rows: minmax(min-content, max-content);
+	min-height: 100vh;
+
+	* {
+		grid-column-start: 1;
+		grid-column-end: 8;
+	}
 
 	.cmp_breadcrumbs {
 		grid-column-start: 1;
@@ -323,12 +355,15 @@ body {
 }
 
 .page_announcement {
-	display: contents !important;
+	//display: contents !important;
+	grid-column-start: 1;
+	grid-column-end: 8;
+	grid-row: 2;
 
 	.obj_announcement_full {
 		grid-column-start: 1;
 		grid-column-end: 8;
-		grid-row: 2;
+		grid-row: 1;
 	}
 }
 
@@ -376,23 +411,7 @@ body {
 	}
 }
 
-.page_contact {
-	height: 80vh;
 
-	.contact_section {
-		grid-column-start: 1;
-		grid-column-end: 8;
-		grid-row: 2;
-
-		display: block;
-
-		.address,
-		.contact {
-			width: 100%;
-			display: block;
-		}
-	}
-}
 
 .page_search {
 	.cmp_form {

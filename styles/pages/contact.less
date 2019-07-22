@@ -8,50 +8,69 @@
  * @brief Styles applying to the contact page
  * @link templates/frontend/pages/contact.tpl
  */
+
+.page_contact {
+	min-height: 80vh;
+
+	.contact_section {
+		grid-column-start: 1;
+		grid-column-end: 8;
+		grid-row: 2;
+
+		display: block;
+
+		.address,
+		.contact {
+			width: 100%;
+			display: block;
+		}
+	}
+}
+
 .page_contact {
 
-    .address,
-    .phone,
-    .email {
-        margin-top: @base;
-        margin-bottom: @base;
-        font-size: @font-sml;
-    }
+	.address,
+	.phone,
+	.email {
+		margin-top: @base;
+		margin-bottom: @base;
+		font-size: @font-sml;
+	}
 
-    .address {
-        margin-top: 0;
+	.address {
+		margin-top: 0;
 
-        p {
-            margin: 0;
-        }
-    }
+		p {
+			margin: 0;
+		}
+	}
 
-    .label {
-        display: block;
-        font-weight: @bold;
-    }
+	.label {
+		display: block;
+		font-weight: @bold;
+	}
 
-    .contact.support {
-        margin-top: @double * 2;
-    }
+	.contact.support {
+		margin-top: @double * 2;
+	}
 
-    @media(min-width: @screen-tablet) {
+	@media(min-width: @screen-tablet) {
 
-        .contact_section {
-            .pkp_helpers_clear;
-        }
+		.contact_section {
+			.pkp_helpers_clear;
+		}
 
-        .contact {
-            float: left;
-            width: 50%;
+		.contact {
+			float: left;
+			width: 50%;
 
-            &.primary {
-                padding-right: @double;
-            }
+			&.primary {
+				padding-right: @double;
+			}
 
-            &.support {
-                margin-top: 0;
-            }
-        }
-    }
+			&.support {
+				margin-top: 0;
+			}
+		}
+	}
 }
