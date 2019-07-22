@@ -144,8 +144,7 @@ body {
 .pkp_structure_footer {
 	.gridWidthFull();
 	width: 100%;
-	grid-row-start: 3;
-	grid-row-end: 4;
+	grid-row: 3;
 	display: grid;
 	.gridSetup(@gridColumns);
 
@@ -473,4 +472,107 @@ body {
 		grid-template-columns: 1fr repeat(@gridColumns - 2, @screen-lg-desktop / @gridColumns) 1fr;
 		grid-auto-rows: minmax(min-content, max-content);
 	}
+}
+
+@media screen and (max-width: @screen-tablet) {
+	.pkp_structure_main {
+		//.gridWidthCustom(2, 10);
+		grid-column-start: 2 !important;
+		grid-column-end: 12 !important;
+		grid-row: 2 !important;
+	}
+
+	.pkp_structure_sidebar {
+		grid-column-start: 2 !important;
+		grid-column-end: 12 !important;
+		grid-row: 3 !important;
+	}
+
+	.pkp_structure_sidebar when (@sidebarPosition ='off') {
+		display: none;
+	}
+
+	.pkp_structure_footer {
+		grid-row: 4;
+
+		.pkp_footer_content {
+			grid-column-start: 2;
+			grid-column-end: 12;
+			grid-row: 1;
+
+			padding-top: @double;
+			padding-bottom: @double;
+		}
+
+		.pkp_brand_footer {
+			grid-column-start: 2;
+			grid-column-end: 12;
+			grid-row: 2;
+		}
+	}
+}
+
+@media screen and (max-width: @screen-phone) {
+	.heroContainer {
+		display: none !important;
+	}
+
+	body {
+		min-width: @screen-phone;
+	}
+
+	.pkp_head_wrapper {
+		.pkp_site_name_wrapper {
+			grid-column-start: 2 !important;
+			grid-column-end: 12 !important;
+			grid-row: 2 !important;
+		}
+
+		.pkp_site_name_wrapper {
+			grid-column-start: 2 !important;
+			grid-column-end: 12 !important;
+
+			padding-top: -1 * @base;
+		}
+	}
+
+	.pkp_structure_main {
+		//.gridWidthCustom(2, 10);
+		grid-column-start: 1 !important;
+		grid-column-end: @gridColumns + 1 !important;
+		grid-row: 2 !important;
+	}
+
+	.pkp_structure_sidebar {
+		grid-column-start: 1 !important;
+		grid-column-end: @gridColumns + 1 !important;
+		grid-row: 3 !important;
+		padding-left: @base;
+		padding-right: @base;
+	}
+
+	.pkp_structure_sidebar when (@sidebarPosition ='off') {
+		display: none;
+	}
+
+	.pkp_structure_footer {
+		grid-row: 4;
+
+		.pkp_footer_content {
+			grid-column-start: 1;
+			grid-column-end: @gridColumns + 1;
+			grid-row: 1;
+
+			padding: @double @base  !important;
+		}
+
+		.pkp_brand_footer {
+			grid-column-start: 1;
+			grid-column-end: @gridColumns + 1;
+			grid-row: 2;
+
+			padding: 0 @double @base @double  !important;
+		}
+	}
+
 }

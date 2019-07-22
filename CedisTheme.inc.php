@@ -68,6 +68,12 @@ class CedisTheme extends ThemePlugin {
       )
     ));
 
+    // Short title for responsive text display
+    /*$this->addOption('shortTitle', 'text', array(
+      'label' => 'plugins.themes.cedistheme.option.cedisTheme.shortTitleLabel',
+      'description' => 'plugins.themes.cedistheme.option.cedisTheme.shortTitleDescription'
+    )); */
+
     // Hero Option
     $this->addOption('hero', 'radio', array(
       'label' => 'plugins.themes.cedistheme.option.cedisTheme.heroLabel',
@@ -110,7 +116,7 @@ class CedisTheme extends ThemePlugin {
       'options' => array(
         'right' => 'plugins.themes.cedistheme.option.cedisTheme.sidebarPositionRight',
         'left' => 'plugins.themes.cedistheme.option.cedisTheme.sidebarPositionLeft',
-        //'off' => 'plugins.themes.cedistheme.option.cedisTheme.sidebarPositionOff'
+        'off' => 'plugins.themes.cedistheme.option.cedisTheme.sidebarPositionOff'
       )
     ));
 
@@ -283,6 +289,12 @@ class CedisTheme extends ThemePlugin {
       }
     }
 
+    /*$headerShortTitle = $this->getOption('shortTitle');
+    if (empty($headerShortTitle)) {
+      $additionalLessVariables[] = '@shortTitle: \'\';';
+    } else {
+      $additionalLessVariables[] = '@shortTitle: \'' . $headerShortTitle . '\';';
+    }*/
 
     $heroState = $this->getOption('hero');
     if (empty($heroState) || $heroState === 'disabled') {

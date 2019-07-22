@@ -67,6 +67,7 @@
 							<a href="{$homeUrl}" class="is_text">{$displayPageHeaderTitle}</a>**}
 						{/if}
 					{if $requestedOp == 'index'}
+						<a href="{$homeUrl}" class="short_text_title"></a>
 						</h1>
 					{else}
 						</div>
