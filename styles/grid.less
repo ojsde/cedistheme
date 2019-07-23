@@ -101,7 +101,7 @@ body {
 		height: 100%;
 
 		.gridSetup(@gridColumns);
-		grid-template-rows: 30px;
+		//grid-template-rows: 30px;
 
 		.pkp_navigation_primary_wrapper {
 			display: contents;
@@ -154,6 +154,7 @@ body {
 		grid-row-end: 3;
 		margin-top: auto;
 		margin-bottom: auto;
+		padding: @double 0;
 
 		display: inline-block;
 		align-items: center;
@@ -295,7 +296,7 @@ body {
 
 	.pkp_structure_sidebar {
 		.pkp_block {
-			display: block;
+			display: inline-block;
 			width: 100%;
 			padding: 0;
 			margin: 0;
@@ -305,6 +306,7 @@ body {
 
 			.title,
 			.content {
+				display: block;
 				padding-left: @base;
 				padding-right: @base;
 				padding-top: @base;
@@ -366,12 +368,9 @@ body {
 	}
 }
 
-.page_about {
-	.about_journal_wrapper {
-		grid-column-start: 1;
-		grid-column-end: 8;
-		grid-row: 2;
-	}
+.page_about * {
+	grid-column-start: 1;
+	grid-column-end: 8;
 }
 
 .page_submissions {
