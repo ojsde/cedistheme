@@ -51,6 +51,7 @@
   <message key="plugins.themes.cedistheme.option.cedisTheme.sidebarPositionDescription">Determine the position of the sidebar</message>
   <message key="plugins.themes.cedistheme.option.cedisTheme.sidebarPositionRight">Right</message>
   <message key="plugins.themes.cedistheme.option.cedisTheme.sidebarPositionLeft">Left</message>
+  <message key="plugins.themes.cedistheme.option.cedisTheme.sidebarPositionOff">Off</message>
   <message key="plugins.themes.cedistheme.option.cedisTheme.headlineFontLabel">Headline Font</message>
   <message key="plugins.themes.cedistheme.option.cedisTheme.headlineFontDescription">Choose from a selection of fonts for all headlines</message>
   <message key="plugins.themes.cedistheme.option.cedisTheme.bodyFontLabel">Body Font</message>
@@ -70,4 +71,5 @@
   <message key="plugins.themes.cedistheme.option.cedisTheme.borderStylesOff">Clean</message>
   <message key="plugins.themes.cedistheme.option.cedisTheme.borderStylesHorizontal">Horizontal Borders</message>
   <message key="plugins.themes.cedistheme.option.cedisTheme.borderStylesDefault">Blocks</message>
+  <message key="plugins.themes.cedistheme.option.cedisTheme.borderStylesFull">Full</message>
 </locale>

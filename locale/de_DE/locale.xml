@@ -51,6 +51,7 @@
   <message key="plugins.themes.cedistheme.option.cedisTheme.sidebarPositionDescription">Schaltet die Position der Seitenleiste um</message>
   <message key="plugins.themes.cedistheme.option.cedisTheme.sidebarPositionRight">Rechts</message>
   <message key="plugins.themes.cedistheme.option.cedisTheme.sidebarPositionLeft">Links</message>
+  <message key="plugins.themes.cedistheme.option.cedisTheme.sidebarPositionOff">Aus</message>
   <message key="plugins.themes.cedistheme.option.cedisTheme.headlineFontLabel">Schriftart für Überschriften</message>
   <message key="plugins.themes.cedistheme.option.cedisTheme.headlineFontDescription">Auswahl an Schriftart, die auf sämtliche Überschriften angewendet wird</message>
   <message key="plugins.themes.cedistheme.option.cedisTheme.bodyFontLabel">Schriftarten für Fließtext</message>
@@ -69,5 +70,7 @@
   <message key="plugins.themes.cedistheme.option.cedisTheme.borderStylesDescription">Schaltet zwischen den verschiedenen Optionen zur visuellen Struktur um</message>
   <message key="plugins.themes.cedistheme.option.cedisTheme.borderStylesOff">Clean</message>
   <message key="plugins.themes.cedistheme.option.cedisTheme.borderStylesHorizontal">Horizontale Trennlinien</message>
-  <message key="plugins.themes.cedistheme.option.cedisTheme.borderStylesDefault">Blöckefault</message>
+  <message key="plugins.themes.cedistheme.option.cedisTheme.borderStylesDefault">Blöcke</message>
+  <message key="plugins.themes.cedistheme.option.cedisTheme.borderStylesDefault">Default</message>
+
 </locale>
