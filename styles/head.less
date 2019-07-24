@@ -151,8 +151,12 @@
 .pkp_navigation_primary {
 
 	text-align: center;
+	//height: @base-line-height + 2px;
 
 	>li {
+		//height: @base-line-height + 2px;
+
+		height: auto !important;
 
 		>a {
 			margin: 0 1em;
@@ -165,7 +169,8 @@
 				filter: invert(100%);
 
 				outline: 0;
-				border-color: @menuColour;
+				//border-color: @menuColour;
+				border: none;
 			}
 		}
 
@@ -234,6 +239,12 @@
 			}
 		}
 	}
+
+	.pkp_site_name_wrapper {
+		min-height: 50px !important;
+		max-height: 150px !important;
+	}
+
 }
 
 .pkp_search {

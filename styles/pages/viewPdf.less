@@ -12,11 +12,24 @@
 .header_view {
 	z-index: 2;
 	position: relative;
-	background: @primary-lift;
+	//background: @primary-lift;
+
+	grid-column-start: 2;
+	grid-column-end: @gridColumns;
+	display: inline-block;
+	background: none;
 
 	a {
 		line-height: @line-header;
 		text-decoration: none;
+		display: inline-block;
+		overflow-wrap: break-word;
+		color: @highlightColour  !important;
+
+	}
+
+	a:hover {
+		color: white !important;
 	}
 
 	.return {

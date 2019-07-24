@@ -74,6 +74,11 @@ body {
 		display: inline-block;
 		justify-items: right;
 		align-items: top;
+
+		a,
+		span {
+			color: @neutralColour;
+		}
 	}
 
 	/*.pkp_search_wrapper {
@@ -327,7 +332,7 @@ body {
 	grid-auto-rows: minmax(min-content, max-content);
 	min-height: 100vh;
 
-	* {
+	>* {
 		grid-column-start: 1;
 		grid-column-end: 8;
 	}
