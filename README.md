@@ -8,18 +8,21 @@ An OJS theme that allows customizing the OJS default theme.
 
 ## Settings
 
-- Key Colour: for header background, primary navigation, links
-- Socondary Colour: for headings, borders
-- Neutral Colour: for footer background, sidebar background
-- Header Bright/Dark: key colour for navigation only
-- Header Logo Behaviour: logo vs. banner
-- Hero: hero image, hero claim with hero claim colour
-- Journal Description: position of journal description on journal index page
-- Sidbar position: left, right, off
-- Headline Font: Arial, Georgia, Noto Sans, Noto Serif, Fira Sans, Source Sans Pro, Merriweather, Merriweather Sans
-- Spacings: spacings in px
-- Body Font: Arial, Georgia, Noto Sans, Noto Serif, Fira Sans, Source Sans Pro, Merriweather, Merriweather Sans
-- Border Behaviour: full, clean, horizontal, blocks
+- Header Colour (adopted by Default Theme Plugin)
+- Heading: custom heading / Title / hero claim, in addition to logo
+- Heading Colour: colour for custom heading
+- Mobile Hader: wether to keep logo or custom heading on small mobiles (resposive behaviour)
+- Position Journal Description: display journal description above or below announcements, or not at all
+- Footer Colour: background color of the footer
+- Link colour: colour of links
+- Text colour: colour of text in paragraphs
+- Colour h1 h2 h3
+- Font Headings: a selection of fonts to choose from
+- Font Body: a selction of fonts to choose from
+- Base Font Size
+- Borders: borders as in default plugin or only vertical/horizontal borders
+- Sidebar Position: left or right
+- Hero Header: on or off (user homepage image as hero image, use custom heading as hero claim)
 
 ## Installation
 
