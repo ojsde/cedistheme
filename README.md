@@ -9,7 +9,7 @@ An OJS theme that allows customizing the OJS default theme.
 ## Settings
 
 - Key Colour: for header background, primary navigation, links
-- Socondary Colour: for headings, borders
+- Secondary Colour: for headings, borders
 - Neutral Colour: for footer background, sidebar background
 - Header Bright/Dark: key colour for navigation only
 - Header Logo Behaviour: logo vs. banner
