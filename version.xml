@@ -17,12 +17,12 @@
 <version>
 	<application>cedistheme</application>
 	<type>plugins.themes</type>
-	<release>0.0.0.1</release>
-	<date>2019-04-13</date>
+	<release>1.0.0</release>
+	<date>2019-09-04</date>
 	<lazy-load>1</lazy-load>
 	<class>CedisTheme</class>
   <author>Dennis Twardy</author>
-  <contact>kontakt@dennistwardy.com</contact>
-  <git>github.com/dtwardy/cedistheme</git>
-  <description>A small dummy theme plugin to start with a basic structure</description>
+  <contact>e-publishing@cedis.fu-berlin.de</contact>
+  <git>github.com/ojsde/cedistheme</git>
+  <description>customized OJS 3.1.2 compatible theme with various adjustment possibilities</description>
 </version>
