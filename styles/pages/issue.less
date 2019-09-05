@@ -16,7 +16,8 @@
 			.cover {
 				grid-column-start: 1;
 				grid-column-end: 3;
-				grid-row: 2;
+				grid-row-start: 2;
+				grid-row-end: 5;
 				padding-right: @double;
 
 				img {
@@ -33,22 +34,44 @@
 			}
 
 			.pub_id {
-				grid-column-start: 1;
+				grid-column-start: 3;
 				grid-column-end: 8;
 				grid-row: 3;
+
+				padding-left: @double;
+
+				overflow-wrap: break-word;
 			}
 
 			.published {
-				grid-column-start: 1;
+				grid-column-start: 3;
 				grid-column-end: 8;
 				grid-row: 4;
+
+				padding-left: @double;
+
+				overflow-wrap: break-word;
+			}
+		}
+
+		.galleys {
+			grid-column-start: 1;
+			grid-column-end: 8;
+			grid-row: 5;
+
+			padding-top: @double;
+			padding-bottom: @double;
+			//padding-right: @double;
+
+			.galleys_links {
+				padding-left: 0;
 			}
 		}
 
 		.sections {
 			grid-column-start: 1;
 			grid-column-end: 8;
-			grid-row: 5;
+			grid-row: 6;
 
 			.section:first-child {
 				margin-top: @base;
@@ -66,6 +89,10 @@
 					.title {
 						margin-top: @base;
 						padding: 0;
+
+						.subtitle {
+							display: block;
+						}
 					}
 
 					.meta {

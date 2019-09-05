@@ -9,12 +9,30 @@ h3 {
 
 .obj_issue_toc {
 	h2 {
-		color: @neutralColour  !important;
+		color: @contrastColour  !important;
 		margin-top: 0 !important;
 	}
 }
 
 p.current_issue_title,
 .published {
-	color: @neutralColour  !important;
+	color: @contrastColour  !important;
+}
+
+h1.page_title {
+	color: @contrastColour  !important;
+}
+
+.obj_article_summary .title span.subtitle {
+	color: black;
+}
+
+& when (@headerLight =false) {
+	#navigationUser>li>a {
+		color: @userMenuColour  !important;
+	}
+
+	#headerNavigationContainer>div>div.pkp_site_name_wrapper>.pkp_site_name>a.is_text {
+		color: @userMenuColour  !important;
+	}
 }

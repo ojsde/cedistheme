@@ -4,12 +4,130 @@
 	.cmp_announcements,
 	.current_issue,
 	.entry_details .item,
-	.issues_archive li {
-		border-bottom: 1px solid @contrastColour;
+	.issues_archive li,
+	.additional_content {
+		border-top: @bg-border;
 	}
 
-	.issues_archive li:last-child {
-		border-bottom: none;
+	.page_index_journal {
+		.journal-description-above {
+			border-top: none !important;
+		}
+
+
+		.cmp_announcements when (@descriptionTextState ='below') {
+			border-top: none !important;
+		}
+
+
+		.cmp_announcements {
+			margin-top: 0 !important;
+			padding-top: @double  !important;
+		}
+
+		#main-content>div.homepage_image {
+			padding-bottom: @triple  !important;
+		}
+
+		.current_issue {
+			padding-bottom: 0 !important;
+		}
+
+		#main-content>div.current_issue>div.obj_issue_toc>div.sections {
+
+			>div.section:last-child {
+				margin-bottom: @triple  !important;
+			}
+
+			>div.section>ul>li {
+				margin-bottom: @double  !important;
+
+				.galleys_links {
+					margin-top: @double  !important;
+					margin-bottom: 0 !important;
+				}
+			}
+		}
+
+	}
+
+	.page_issue {
+
+		.galleys,
+		.section {
+			border-top: @bg-border;
+			padding-top: @double;
+		}
+
+		.galleys {
+			padding-bottom: 0 !important;
+		}
+
+		.published {
+			padding-bottom: @triple;
+		}
+
+		.galleys_links {
+			margin-bottom: 0 !important;
+		}
+
+		.articles li {
+			margin-bottom: @base  !important;
+		}
+	}
+
+	.page_article {
+
+		.main_entry,
+		.entry_details {
+			border-top: @bg-border;
+			padding-top: @double;
+		}
+
+		h1.page_title,
+		h2.subtitle {
+			padding-bottom: @double;
+		}
+
+		h2.subtitle {
+			margin-top: -1px * @double;
+		}
+
+		.entry_details {
+			.item {
+				margin-top: 0;
+				padding-top: @double;
+			}
+
+			.item:first-child {
+				border-top: none;
+				padding-top: @base;
+				margin-top: 0 !important;
+			}
+
+			.galleys {
+				padding-bottom: @base  !important;
+
+				.galleys_links {
+					margin-bottom: 0 !important;
+				}
+			}
+		}
+
+	}
+
+	.page_issue_archive {
+		.issues_archive {
+			li:first-child {
+				border-top: none !important;
+			}
+
+			li {
+				margin-top: 0 !important;
+				padding-top: @double  !important;
+				padding-bottom: @triple  !important;
+			}
+		}
 	}
 
 	/*.page_announcements {
@@ -28,6 +146,7 @@
 }
 
 & when (@structureStyle ='fullBorders') {
+
 
 	.page {
 		border-left: @bg-border;
@@ -73,17 +192,32 @@
 
 		.cmp_breadcrumbs,
 		.cover,
-		.description,
+		//.description,
 		.pub_id,
 		.published,
-		.section {
+		.section,
+		.galleys {
 			//border-top: @bg-border;
 			border-bottom: @bg-border;
 			padding: @double;
 		}
 
+		.cover {
+			border-right: @bg-border;
+		}
+
 		.description {
-			border-left: @bg-border;
+			padding: @double;
+		}
+
+		.galleys {
+			border-top: @bg-border;
+			border-bottom: none;
+		}
+
+		.published,
+		.cover {
+			border-bottom: none;
 		}
 
 		/*.cmp_breadcrumbs {
@@ -105,13 +239,18 @@
 		.obj_issue_toc .sections {
 			margin-top: 0;
 
-			.section:first-child {
+			.section {
+				border-top: @bg-border;
+				border-bottom: none;
+			}
+
+			/*.section:first-child {
 				margin-top: 0;
 			}
 
 			.section:last-child {
 				border-bottom: none;
-			}
+			}*/
 		}
 	}
 
@@ -120,13 +259,23 @@
 		.obj_article_details {
 
 			.page_title,
+			.subtitle,
 			.main_entry,
 			.entry_details {
-				border-bottom: @bg-border;
+				//border-bottom: @bg-border;
 				//border-top: none;
 				padding: @double;
 				margin-top: 0;
 				margin-bottom: 0;
+			}
+
+			.subtitle {
+				padding-top: none;
+			}
+
+			.main_entry,
+			.entry_details {
+				border-top: @bg-border;
 			}
 
 			.main_entry {
@@ -172,6 +321,10 @@
 				margin: 0;
 
 			}
+
+			li:last-child {
+				border-bottom: none;
+			}
 		}
 
 		.cmp_pagination {
@@ -181,11 +334,7 @@
 		}
 	}
 
-	.page_about {
-		.about_journal_wrapper {
-			padding: 0 @double;
-		}
-	}
+
 
 	.page_submissions {
 		div {
@@ -209,6 +358,7 @@
 		}
 	}
 
+	/*
 	.page_editorial_team {
 		.editorial_team_wrapper {
 			padding: 0 @double;
@@ -225,12 +375,25 @@
 		.contact_section {
 			padding: 0 @double;
 		}
-	}
+	}*/
 
 	.page_announcements {
+		>p {
+			padding-left: @double;
+			padding-right: @double;
+		}
+
 		.cmp_announcements {
 			margin: 0;
-			//padding: 0 @double;
+
+			li {
+				border-top: @bg-border;
+				padding: @double;
+			}
+
+			li:first-child {
+				border-top: none !important;
+			}
 		}
 	}
 
@@ -256,6 +419,21 @@
 			width: 90% !important;
 			margin: @double @quadruple  !important;
 			//padding: 0 @quadruple  !important;
+		}
+	}
+}
+
+@media screen and (max-width: @screen-tablet) {
+	.pkp_structure_sidebar {
+		border-left: @bg-border;
+		border-right: @bg-border;
+
+		padding: 0 !important;
+
+		.pkp_block {
+			border-top: @bg-border;
+			padding-left: @base  !important;
+			padding-right: @base  !important;
 		}
 	}
 }

@@ -26,11 +26,15 @@
 		width: 100%;
 	}
 
+	.homepage_image when (@structureStyle ='fullBorders') {
+		border-bottom: none !important;
+	}
 
 	.homepage_image {
 		width: 100%;
 		height: auto;
-		padding: @double;
+		padding: 0 !important;
+		margin-bottom: 0 !important;
 
 		img {
 			width: 100%;
@@ -49,7 +53,8 @@
 		grid-auto-rows: minmax(min-content, max-content);
 		//margin-top: @base;
 
-		.page-header {
+		.page-header,
+		>h2 {
 			grid-column-start: 1;
 			grid-column-end: 8;
 			grid-row: 1;
@@ -68,13 +73,19 @@
 		.obj_issue_toc {
 			display: contents;
 
+			.galleys {
+				grid-column-start: 1;
+				grid-column-end: 8;
+				grid-row: 4;
+			}
+
 			.heading {
 				display: contents;
 
 				.cover {
 					grid-column-start: 1;
 					grid-column-end: 3;
-					grid-row: 4;
+					grid-row: 5;
 					padding: 0;
 					padding-right: @double;
 
@@ -87,7 +98,7 @@
 				.description {
 					grid-column-start: 3;
 					grid-column-end: 8;
-					grid-row: 4;
+					grid-row: 5;
 					margin: 0;
 					padding: 0;
 					padding-left: @double;
@@ -107,7 +118,7 @@
 		.sections {
 			grid-column-start: 1;
 			grid-column-end: 8;
-			grid-row: 5;
+			grid-row: 6;
 
 			.section:first-child {
 				margin-top: @base;
@@ -150,7 +161,8 @@
 			}
 		}
 
-		.read-more {
+		.read-more,
+		.read_more {
 			grid-column-start: 1;
 			grid-column-end: 8;
 			grid-row: 6;

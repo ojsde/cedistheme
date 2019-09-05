@@ -20,16 +20,17 @@
  *}
 {include file="frontend/components/header.tpl" pageTitleTranslated=$currentJournal->getLocalizedName()}
 
-<div id="main-content" class="page page_index_journal" role="content">
+<div id="main-content" class="page page_index_journal"> {* added id and .page class *}
 
 	{call_hook name="Templates::Index::journal"}
 
 	{if $homepageImage}
 		<div class="homepage_image">
-			<img class="img-responsive" src="{$publicFilesDir}/{$homepageImage.uploadName|escape:"url"}" alt="{$homepageImageAltText|escape}">
+			<img src="{$publicFilesDir}/{$homepageImage.uploadName|escape:"url"}" alt="{$homepageImageAltText|escape}">
 		</div>
 	{/if}
 
+	{* added journalDescription hook for theme option switched via journal-description-above class *}
 	{if $journalDescription}
 		<div class="journal-description-above journal-description">
 			{$journalDescription}
@@ -38,23 +39,38 @@
 
 	{* Announcements *}
 	{if $numAnnouncementsHomepage && $announcements|count}
-		<section class="cmp_announcements media">
-			<header class="page-header">
+		<div class="cmp_announcements media highlight_first">
+			
 				<h2>
 					{translate key="announcement.announcements"}
 				</h2>
-			</header>
-			<div class="media-list">
+	
+		
 				{foreach name=announcements from=$announcements item=announcement}
 					{if $smarty.foreach.announcements.iteration > $numAnnouncementsHomepage}
-						{php}break;{/php}
+						{break}
 					{/if}
+					{if $smarty.foreach.announcements.iteration == 1}
 					{include file="frontend/objects/announcement_summary.tpl" heading="h3"}
+					<div class="more"></div>
+				{else}
+					<article class="obj_announcement_summary">
+						<h4>
+							<a href="{url router=$smarty.const.ROUTE_PAGE page="announcement" op="view" path=$announcement->getId()}">
+								{$announcement->getLocalizedTitle()|escape}
+							</a>
+						</h4>
+						<div class="date">
+							{$announcement->getDatePosted()}
+						</div>
+					</article>
+				{/if}
 				{/foreach}
-			</div>
-		</section>
+		
+		</div>
 	{/if}
 
+	{* Added journalDescription text switchable via classes *}
 	{if $journalDescription}
 		<div class="journal-description-below journal-description">
 			{$journalDescription}
@@ -64,28 +80,26 @@
 
 	{* Latest issue *}
 	{if $issue}
-		<section class="current_issue">
-			<header class="page-header">
+		<div class="current_issue">
+			
 				<h2>
 					{translate key="journal.currentIssue"}
 				</h2>
-			</header>
-			<p class="current_issue_title lead">
+			<div class="current_issue_title lead">
 				{$issue->getIssueIdentification()|strip_unsafe_html}
-			</p>
+			</div>
 			{include file="frontend/objects/issue_toc.tpl"}
-			<a href="{url router=$smarty.const.ROUTE_PAGE page="issue" op="archive"}" class="btn btn-primary read-more">
+			<a href="{url router=$smarty.const.ROUTE_PAGE page="issue" op="archive"}" class="read_more">
 				{translate key="journal.viewAllIssues"}
-				<span class="glyphicon glyphicon-chevron-right"></span>
 			</a>
-		</section>
+		</div>
 	{/if}
 
 	{* Additional Homepage Content *}
 	{if $additionalHomeContent}
-		<section class="additional_content">
+		<div class="additional_content">
 			{$additionalHomeContent}
-		</section>
+		</div>
 	{/if}
 </div><!-- .page -->
 

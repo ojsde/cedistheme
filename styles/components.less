@@ -54,7 +54,7 @@
 }
 
 // Add an icon to the button
-.cmp_button_icon( @icon ) {
+.cmp_button_icon(@icon ) {
 	position: relative;
 	padding-right: @triple + (@triple / 2);
 	border-right: none;
@@ -83,7 +83,7 @@
 	}
 }
 
-.cmp_button_icon_left( @icon ) {
+.cmp_button_icon_left(@icon ) {
 	padding-right: 1em;
 	padding-left: @triple + (@triple / 2);
 	border-right: @form-border;
@@ -100,7 +100,7 @@
 }
 
 // Text button with an icon
-.cmp_button_text( @icon ) {
+.cmp_button_text(@icon ) {
 	display: inline-block;
 	position: relative;
 	padding-right: @triple;
@@ -132,7 +132,7 @@
 .cmp_article_list {
 	&:extend(.pkp_unstyled_list);
 
-	> li {
+	>li {
 		.pkp_helpers_clear();
 		margin-bottom: @triple;
 	}
@@ -159,7 +159,7 @@
 
 	.fields {
 
-		> div {
+		>div {
 			position: relative;
 			padding-bottom: @triple; // Contain errors
 
@@ -228,8 +228,8 @@
 		color: #fff;
 	}
 
-	label > input[type="checkbox"],
-	label > input[type="radio"] {
+	label>input[type="checkbox"],
+	label>input[type="radio"] {
 		margin-right: 0.25em;
 	}
 
@@ -280,7 +280,7 @@
 		max-width: 100%;
 		height: auto;
 
-		> li {
+		>li {
 			display: inline-block;
 
 			&.tagit-choice {
@@ -331,7 +331,7 @@
 		vertical-align: middle;
 	}
 
-	> li {
+	>li {
 		padding: @half;
 		font-size: @font-sml;
 		line-height: @line-sml;
@@ -477,12 +477,12 @@
 // Announcements
 .cmp_announcements {
 	&:extend(.pkp_unstyled_list);
-	margin-left: -@base;
-	margin-right: -@base;
+	//margin-left: -@base;
+	//margin-right: -@base;
 
-	> li {
-		padding: @triple @base;
-		border-bottom: @bg-border;
+	>li {
+		//padding: @triple @base;
+		//border-bottom: @bg-border;
 
 		&:last-child {
 			border-bottom: none;
@@ -490,22 +490,22 @@
 	}
 
 	@media(min-width: @screen-phone) {
-		margin-left: -@double;
-		margin-right: -@double;
+		//margin-left: -@double;
+		//margin-right: -@double;
 
-		> li {
-			padding-left: @double;
-			padding-right: @double;
+		>li {
+			//padding-left: @double;
+			//padding-right: @double;
 		}
 	}
 
 	@media(min-width: @screen-desktop) {
-		margin-left: -@triple;
-		margin-right: -@triple;
+		//margin-left: -@triple;
+		//margin-right: -@triple;
 
-		> li {
-			padding-left: @triple;
-			padding-right: @triple;
+		>li {
+			//padding-left: @triple;
+			//padding-right: @triple;
 		}
 
 	}

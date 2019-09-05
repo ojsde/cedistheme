@@ -167,7 +167,7 @@ class CedisTheme extends ThemePlugin {
         'full' => 'plugins.themes.cedistheme.option.cedisTheme.borderStylesFull', 
         'clean' => 'plugins.themes.cedistheme.option.cedisTheme.borderStylesOff',
         'horizontalBorders' => 'plugins.themes.cedistheme.option.cedisTheme.borderStylesHorizontal',
-        'blocks' => 'plugins.themes.cedistheme.option.cedisTheme.borderStylesDefault'
+        //'blocks' => 'plugins.themes.cedistheme.option.cedisTheme.borderStylesDefault'
       )
     ));
 
@@ -236,9 +236,13 @@ class CedisTheme extends ThemePlugin {
     // Calculate neutralColour's brightness and change footer font colour accordingly
     if (hexdec(substr($primColour, 1, 2)) + hexdec(substr($neutColour, 3, 2)) + hexdec(substr($neutColour, 5, 2)) > 430) {
       $additionalLessVariables[] = '@footerColour: #111;';
+      $additionalLessVariables[] = '@userMenuColour: #111;';
     } else {
       $additionalLessVariables[] = '@footerColour: #FFF;';
+      $additionalLessVariables[] = '@userMenuColour: #FFF;';
     }
+
+    //if (hexdec(substr($primColour, 1, 2)))
 
     $headerShade = $this->getOption('headerBright');
     if (empty($headerShade) || $headerShade === 'dark') {
@@ -354,7 +358,7 @@ class CedisTheme extends ThemePlugin {
 
     $headlineFontOpt = $this->getOption('headlineFont');
     //ChromePhp::log('$headlineFontOpt: ' . $headlineFontOpt);
-    if (empty($headlineFontOpt) || $headlineFontOpt === 'MerriweatherSans') {
+    if ($headlineFontOpt === 'MerriweatherSans') {
       $additionalLessVariables[] = '@headlineFont: \'MerriweatherSans\';';
     } elseif ($headlineFontOpt === 'Georgia') {
       $additionalLessVariables[] = '@headlineFont: \'Georgia\';';
@@ -374,7 +378,7 @@ class CedisTheme extends ThemePlugin {
 
     $bodyFontOpt = $this->getOption('bodyFont');
     //ChromePhp::log('$bodyFontOpt: ' . $bodyFontOpt);
-    if (empty($headlineFontOpt) || $bodyFontOpt === 'MerriweatherSans') {
+    if ($bodyFontOpt === 'MerriweatherSans') {
       $additionalLessVariables[] = '@bodyFont: \'MerriweatherSans\';';
     } elseif ($bodyFontOpt === 'Georgia') {
       $additionalLessVariables[] = '@bodyFont: \'Georgia\';';

@@ -242,7 +242,7 @@
 
 	.pkp_site_name_wrapper {
 		min-height: 50px !important;
-		max-height: 150px !important;
+		max-height: auto;
 	}
 
 }
@@ -273,5 +273,12 @@
 
 	.search_controls {
 		display: none !important;
+	}
+}
+
+& when (@headerLogoState ='off') {
+	.is_text {
+		display: block;
+		visibility: visible;
 	}
 }

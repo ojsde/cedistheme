@@ -1,8 +1,8 @@
 {**
  * templates/frontend/pages/indexSite.tpl
  *
- * Copyright (c) 2014-2017 Simon Fraser University Library
- * Copyright (c) 2003-2017 John Willinsky
+ * Copyright (c) 2014-2019 Simon Fraser University
+ * Copyright (c) 2003-2019 John Willinsky
  * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
  *
  * Site index.
@@ -10,7 +10,7 @@
  *}
 {include file="frontend/components/header.tpl"}
 
-<div id="main-site" class="page_index_site">
+<div id="main-site" class="page_index_site">  {* added id for CeDiS Theme *}
 
 	{if $about}
 		<div class="about_site">
@@ -19,35 +19,28 @@
 	{/if}
 
 	<div class="journals">
-		<div class="page-header">
-			<h2>
-				{translate key="journal.journals"}
-			</h2>
-		</div>
-
+		<h2>
+			{translate key="journal.journals"}
+		</h2>
 		{if !count($journals)}
-			<div class="no_journals">
-				{translate key="site.noJournals"}
-			</div>
-
+			{translate key="site.noJournals"}
 		{else}
-			<ul class="media-list">
+			<ul>
 				{iterate from=journals item=journal}
 					{capture assign="url"}{url journal=$journal->getPath()}{/capture}
 					{assign var="thumb" value=$journal->getLocalizedSetting('journalThumbnail')}
 					{assign var="description" value=$journal->getLocalizedDescription()}
-					<li class="media">
+					<li{if $thumb} class="has_thumb"{/if}>
 						{if $thumb}
-							{assign var="altText" value=$journal->getLocalizedSetting('journalThumbnailAltText')}
-							<div class="media-left">
+							<div class="thumb">
 								<a href="{$url|escape}">
-									<img class="media-object" src="{$journalFilesPath}{$journal->getId()}/{$thumb.uploadName|escape:"url"}"{if $altText} alt="{$altText|escape}"{/if}>
+									<img src="{$journalFilesPath}{$journal->getId()}/{$thumb.uploadName|escape:"url"}"{if $thumb.altText} alt="{$thumb.altText|escape}"{/if}>
 								</a>
 							</div>
 						{/if}
 
-						<div class="media-body">
-							<h3 class="media-heading">
+						<div class="body">
+							<h3>
 								<a href="{$url|escape}" rel="bookmark">
 									{$journal->getLocalizedName()}
 								</a>
@@ -57,7 +50,7 @@
 									{$description|nl2br}
 								</div>
 							{/if}
-							<ul class="nav nav-pills">
+							<ul class="links">
 								<li class="view">
 									<a href="{$url|escape}">
 										{translate key="site.journalView"}
