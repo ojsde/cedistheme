@@ -1,11 +1,11 @@
 {**
- * templates/frontend/pages/indexJournal.tpl
- *
- * UPDATED/CHANGED/MODIFIED: Marc Behiels - marc@elemental.ca - 250416
+ * cedistheme/templates/frontend/pages/indexJournal.tpl
  *
  * Copyright (c) 2014-2017 Simon Fraser University Library
  * Copyright (c) 2003-2017 John Willinsky
  * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
+ *
+ * Modified (c) 2019 Free University of Berlin, Dennis Twardy
  *
  * @brief Display the index page for a journal
  *
